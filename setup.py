@@ -3,12 +3,7 @@ import sys
 import codecs
 import versioneer
 
-# Determine whether to use Cython
-if '--cythonize' in sys.argv:
-    cythonize_switch = True
-    del sys.argv[sys.argv.index('--cythonize')]
-else:
-    cythonize_switch = False
+cythonize_switch = True
 
 def get_ext_modules():
     import numpy
@@ -98,7 +93,7 @@ def get_ext_modules():
 def setup_package():
     # Create a dictionary of arguments for setup
     setup_args = {
-        'name': 'sklearn-contrib-py-earth',
+        'name': 'pyearth',
         'version': versioneer.get_version(),
         'author': 'Jason Rudy',
         'author_email': 'jcrudy@gmail.com',
